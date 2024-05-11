@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ActiveDiabetesAssistant.BLL.Entities\ActiveDiabetesAssistant.BLL.Entities.csproj" />
+      <ProjectReference Include="..\ActiveDiabetesAssistant.BLL.Interfaces\ActiveDiabetesAssistant.BLL.Interfaces.csproj" />
+      <ProjectReference Include="..\ActiveDiabetesAssistant.BLL.Standart\ActiveDiabetesAssistant.BLL.Standart.csproj" />
+    </ItemGroup>
+
+</Project>
