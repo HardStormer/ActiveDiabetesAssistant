@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
@@ -34,6 +34,7 @@
       <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.Entities\ActiveDiabetesAssistant.DAL.Entities.csproj" />
       <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.Interfaces\ActiveDiabetesAssistant.DAL.Interfaces.csproj" />
       <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.SQL\ActiveDiabetesAssistant.DAL.SQL.csproj" />
+      <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.VisionOCR\ActiveDiabetesAssistant.DAL.VisionOCR.csproj" />
     </ItemGroup>
 
 </Project>

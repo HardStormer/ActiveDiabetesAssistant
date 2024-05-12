@@ -1,4 +1,5 @@
 ﻿using ActiveDiabetesAssistant.DAL.SQL;
+using ActiveDiabetesAssistant.DAL.VisionOCR;
 
 namespace ActiveDiabetesAssistant.PL.API.DependencyInjection;
 
@@ -13,6 +14,9 @@ public static class Injections
 	/// <param name="services"></param>
 	public static void InjectRepositories(this IServiceCollection services)
 	{
+		services.AddScoped<
+			IVisionRepository,
+			VisionRepository>();
 		services.AddScoped<
 			IGlucoseInfoRepository,
 			GlucoseInfoRepository>();
