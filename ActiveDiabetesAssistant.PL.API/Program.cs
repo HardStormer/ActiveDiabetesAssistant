@@ -6,6 +6,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -58,7 +59,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddDbContextFactory<BaseDbContext>(
-	(DbContextOptionsBuilder options) => options.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnStr")));
+	(DbContextOptionsBuilder options) => options.UseNpgsql(builder.Configuration.GetConnectionString("SQLConnStr")));
 
 builder.Services.AddFluentValidationAutoValidation(cfg =>
 {
@@ -66,6 +67,8 @@ builder.Services.AddFluentValidationAutoValidation(cfg =>
 });
 
 builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 
 builder.Services.AddAutoMapper(cfg =>
 {
@@ -92,6 +95,11 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+Log.Logger = new LoggerConfiguration()
+	.MinimumLevel.Debug()
+	.WriteTo.Console()
+	.CreateLogger();
 
 if (app.Environment.IsDevelopment())
 {
