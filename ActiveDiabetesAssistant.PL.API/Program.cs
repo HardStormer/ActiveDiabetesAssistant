@@ -96,6 +96,14 @@ if (app.Environment.IsDevelopment())
 app.UseCors("default");
 app.UseRouting();
 
+app.UseRouter(endpoints =>
+{
+	endpoints.MapGet("/", async context =>
+	{
+		await Task.Run(() => context.Response.Redirect(@"/swagger/index.html"));
+	});
+});
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseHttpsRedirection();
