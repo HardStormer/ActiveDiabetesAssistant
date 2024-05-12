@@ -1,4 +1,5 @@
-﻿global using ActiveDiabetesAssistant.Common.Exceptions;
+﻿global using ActiveDiabetesAssistant.Common.Enums;
+global using ActiveDiabetesAssistant.Common.Exceptions;
 global using ActiveDiabetesAssistant.DAL.Entities;
 global using ActiveDiabetesAssistant.DAL.Interfaces;
 global using ActiveDiabetesAssistant.PL.API.Authentication;

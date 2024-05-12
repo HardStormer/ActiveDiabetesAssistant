@@ -1,4 +1,6 @@
-﻿namespace ActiveDiabetesAssistant.DAL.SQL.Base;
+﻿using ActiveDiabetesAssistant.DAL.Entities.Wrappers;
+
+namespace ActiveDiabetesAssistant.DAL.SQL.Base;
 
 public abstract class BaseRepository<TRepository>(IDbContextFactory<BaseDbContext> contextFactory) : IBaseRepository<TRepository>
 	where TRepository : BaseDto

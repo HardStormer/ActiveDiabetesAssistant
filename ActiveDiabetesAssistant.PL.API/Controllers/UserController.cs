@@ -1,5 +1,4 @@
-﻿using ActiveDiabetesAssistant.PL.API.Controllers;
-using ActiveDiabetesAssistant.PL.API.Models.User.Commands.Delete;
+﻿using ActiveDiabetesAssistant.PL.API.Models.User.Commands.Delete;
 using ActiveDiabetesAssistant.PL.API.Models.User.Commands.Login;
 using ActiveDiabetesAssistant.PL.API.Models.User.Commands.Logout;
 using ActiveDiabetesAssistant.PL.API.Models.User.Commands.Register;
@@ -8,7 +7,7 @@ using ActiveDiabetesAssistant.PL.API.Models.User.Queries;
 using ActiveDiabetesAssistant.PL.API.Models.User.Queries.Get;
 using ActiveDiabetesAssistant.PL.API.Models.User.Queries.GetMyProfile;
 
-namespace GMD.PrivateMessenger.PL.API.Controllers;
+namespace ActiveDiabetesAssistant.PL.API.Controllers;
 
 public class UserController : BaseController
 {

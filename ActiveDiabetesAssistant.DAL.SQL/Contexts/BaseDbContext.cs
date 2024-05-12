@@ -1,15 +1,7 @@
-﻿using ActiveDiabetesAssistant.DAL.Entities;
+﻿namespace ActiveDiabetesAssistant.DAL.SQL.Contexts;
 
-namespace ActiveDiabetesAssistant.DAL.SQL.Contexts;
-
-public sealed class BaseDbContext : DbContext
+public sealed class BaseDbContext(DbContextOptions<BaseDbContext> options) : DbContext(options)
 {
-	public BaseDbContext(DbContextOptions<BaseDbContext> options)
-		: base(options)
-	{
-		//Database.Migrate();
-	}
-
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	{
 		base.OnConfiguring(optionsBuilder);
