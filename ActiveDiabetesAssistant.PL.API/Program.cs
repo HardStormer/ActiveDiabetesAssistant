@@ -3,6 +3,7 @@ using ActiveDiabetesAssistant.PL.API.DependencyInjection;
 using ActiveDiabetesAssistant.PL.API.Middlewares;
 using AutoMapper.Extensions.ExpressionMapping;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -71,6 +72,11 @@ builder.Services.AddAutoMapper(cfg =>
 	cfg.AddExpressionMapping();
 }, AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+	options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
+});
+
 builder.Services.AddAuthentication(DefaultApiAuthenticationOptions.DefaultScheme).AddDefaultApiAuthentication();
 
 builder.Services.AddHttpContextAccessor();
@@ -96,13 +102,11 @@ if (app.Environment.IsDevelopment())
 app.UseCors("default");
 app.UseRouting();
 
-app.UseRouter(endpoints =>
+app.MapGet("/", () => "10.0.0.100");
+
+app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
-	endpoints.MapGet("/", async context =>
-	{
-		await context.Response.WriteAsync("Hello World!");
-		//await Task.Run(() => context.Response.Redirect(@"/swagger/index.html"));
-	});
+	ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
 });
 
 app.UseAuthentication();
