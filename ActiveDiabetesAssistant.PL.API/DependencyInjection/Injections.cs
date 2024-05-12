@@ -14,6 +14,12 @@ public static class Injections
 	public static void InjectRepositories(this IServiceCollection services)
 	{
 		services.AddScoped<
+			IGlucoseInfoRepository,
+			GlucoseInfoRepository>();
+		services.AddScoped<
+			IPersonInfoRepository,
+			PersonInfoRepository>();
+		services.AddScoped<
 			IUserRepository,
 			UserRepository>();
 	}

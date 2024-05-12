@@ -1,4 +1,6 @@
-﻿namespace ActiveDiabetesAssistant.DAL.Interfaces.Base;
+﻿using ActiveDiabetesAssistant.DAL.Entities.Wrappers;
+
+namespace ActiveDiabetesAssistant.DAL.Interfaces.Base;
 
 public interface IBaseRepository<TRepository>
 	where TRepository : BaseDto

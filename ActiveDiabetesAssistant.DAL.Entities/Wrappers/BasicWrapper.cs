@@ -1,4 +1,4 @@
-﻿namespace GMD.PrivateMessenger.DAL.Entities.Wrappers;
+﻿namespace ActiveDiabetesAssistant.DAL.Entities.Wrappers;
 
 public class BasicWrapper<TEnumerable>(TEnumerable? items, int totalCount)
 	where TEnumerable : class, IEnumerable

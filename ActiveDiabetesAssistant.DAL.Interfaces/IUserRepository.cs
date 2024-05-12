@@ -1,6 +1,4 @@
-﻿using ActiveDiabetesAssistant.DAL.Entities;
-
-namespace ActiveDiabetesAssistant.DAL.Interfaces;
+﻿namespace ActiveDiabetesAssistant.DAL.Interfaces;
 
 public interface IUserRepository : IBaseRepository<UserDto>
 {

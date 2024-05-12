@@ -1,6 +1,4 @@
-﻿using ActiveDiabetesAssistant.DAL.Entities;
-
-namespace ActiveDiabetesAssistant.DAL.SQL;
+﻿namespace ActiveDiabetesAssistant.DAL.SQL;
 
 public class UserRepository(IDbContextFactory<BaseDbContext> contextFactory) : BaseRepository<UserDto>(contextFactory), IUserRepository
 {
