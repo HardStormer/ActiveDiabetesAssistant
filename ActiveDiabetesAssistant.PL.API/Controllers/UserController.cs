@@ -110,22 +110,22 @@ public class UserController : BaseController
 	}
 
 	/// <summary>
-	/// Редактирование имени
+	/// Редактирование почты
 	/// </summary>
 	[HttpPost]
-	public async Task<IActionResult> ChangeName(UpdateUserNameCommandRequest updateUserNameCommandRequest)
+	public async Task<IActionResult> ChangeEmail(UpdateUserEmailCommandRequest updateUserEmailCommandRequest)
 	{
 		var user = this.GetApiUser();
 		if (user == null)
 			return BadRequest("Bad token");
 
-		var updateUserNameCommand = new UpdateUserNameCommand
+		var updateUserEmailCommand = new UpdateUserEmailCommand
 		{
 			UserId = user.Id,
-			Name = updateUserNameCommandRequest.Name
+			Email = updateUserEmailCommandRequest.Email
 		};
 
-		await Mediator.Send(updateUserNameCommand);
+		await Mediator.Send(updateUserEmailCommand);
 
 		return Ok();
 	}

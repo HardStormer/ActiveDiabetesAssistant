@@ -21,4 +21,6 @@ public sealed class BaseDbContext : DbContext
 	}
 
 	public DbSet<UserDto> Users { get; set; }
+	public DbSet<PersonInfoDto> PersonInfos { get; set; }
+	public DbSet<GlucoseInfoDto> GlucoseInfos { get; set; }
 }
