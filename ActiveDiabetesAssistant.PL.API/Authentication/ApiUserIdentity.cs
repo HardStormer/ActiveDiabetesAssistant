@@ -30,7 +30,7 @@ public class ApiUserIdentity(UserDto userData, string authenticationType = "Defa
 		}
 		var result = new List<Claim>
 		{
-			new(ClaimTypes.Name, userData.Login!)
+			new(ClaimTypes.Name, userData.Email!)
 		};
 		return result;
 	}

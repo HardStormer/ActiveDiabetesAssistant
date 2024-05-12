@@ -6,9 +6,9 @@ public class UpdateUserPasswordCommandRequest
 	public string Password { get; set; } = string.Empty;
 }
 
-public class UpdateUserNameCommandRequest
+public class UpdateUserEmailCommandRequest
 {
-	public string? Name { get; set; }
+	public string? Email { get; set; }
 }
 
 public class UpdateUserPasswordCommand : BaseCommand,
@@ -19,11 +19,11 @@ public class UpdateUserPasswordCommand : BaseCommand,
 	public string Password { get; set; } = string.Empty;
 }
 
-public class UpdateUserNameCommand : BaseCommand,
+public class UpdateUserEmailCommand : BaseCommand,
 	IRequest
 {
 	public Guid UserId { get; set; }
-	public string? Name { get; set; }
+	public string? Email { get; set; }
 }
 
 public class UpdateUserPasswordCommandValidator : AbstractValidator<UpdateUserPasswordCommand>
@@ -43,13 +43,13 @@ public class UpdateUserPasswordCommandValidator : AbstractValidator<UpdateUserPa
 	}
 }
 
-public class UpdateUserNameCommandValidator : AbstractValidator<UpdateUserNameCommand>
+public class UpdateUserEmailCommandValidator : AbstractValidator<UpdateUserEmailCommand>
 {
-	private readonly Regex nameRegex = new Regex(@"^[A-Za-zА-Яа-яЁё\s'-]{1,50}$");
+	private readonly Regex emailRegex = new Regex(@"^[A-Za-zА-Яа-яЁё\s'-]{1,50}$");
 
-	public UpdateUserNameCommandValidator()
+	public UpdateUserEmailCommandValidator()
 	{
-		RuleFor(u => u.Name).Matches(nameRegex)
+		RuleFor(u => u.Email).Matches(emailRegex)
 			.WithMessage(
 			"Имя должно содержать только буквы (как заглавные, так и строчные) на латинице и кириллице, пробелы, апострофы и дефисы в имени. Длина имени должна быть от 1 до 50 символов."
 			);

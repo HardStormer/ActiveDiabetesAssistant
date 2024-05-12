@@ -8,7 +8,7 @@ public class UserRepository(IDbContextFactory<BaseDbContext> contextFactory) : B
 	{
 		await using BaseDbContext context = await ContextFactory.CreateDbContextAsync();
 
-		var gets = await context.Set<UserDto>().Where(x => x.Login == login).FirstOrDefaultAsync();
+		var gets = await context.Set<UserDto>().Where(x => x.Email == login).FirstOrDefaultAsync();
 
 		return gets;
 	}

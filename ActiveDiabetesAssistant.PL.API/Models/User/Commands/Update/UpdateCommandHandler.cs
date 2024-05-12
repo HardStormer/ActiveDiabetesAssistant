@@ -3,9 +3,9 @@
 public class UpdateUserCommandHandler(
 	IUserRepository service,
 	IValidator<UpdateUserPasswordCommand> validatorPassword,
-	IValidator<UpdateUserNameCommand> validatorLogin) :
+	IValidator<UpdateUserEmailCommand> validatorLogin) :
 	IRequestHandler<UpdateUserPasswordCommand>,
-	IRequestHandler<UpdateUserNameCommand>
+	IRequestHandler<UpdateUserEmailCommand>
 {
 	public async Task Handle(UpdateUserPasswordCommand request, CancellationToken cancellationToken)
 	{
@@ -21,14 +21,14 @@ public class UpdateUserCommandHandler(
 		await service.EditAsync(user);
 	}
 
-	public async Task Handle(UpdateUserNameCommand request, CancellationToken cancellationToken)
+	public async Task Handle(UpdateUserEmailCommand request, CancellationToken cancellationToken)
 	{
 		await validatorLogin.ValidateAndThrowAsync(request, cancellationToken);
 
 		var user = await service.GetAsync(request.UserId)
 			?? throw new NotFoundException(request.UserId.ToString(), request.UserId);
 
-		user.Name = request.Name;
+		user.Email = request.Email;
 
 		await service.EditAsync(user);
 	}
