@@ -45,7 +45,7 @@ public class UpdateUserPasswordCommandValidator : AbstractValidator<UpdateUserPa
 
 public class UpdateUserEmailCommandValidator : AbstractValidator<UpdateUserEmailCommand>
 {
-	private readonly Regex emailRegex = new Regex(@"^[A-Za-zА-Яа-яЁё\s'-]{1,50}$");
+	private readonly Regex emailRegex = new(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
 
 	public UpdateUserEmailCommandValidator()
 	{

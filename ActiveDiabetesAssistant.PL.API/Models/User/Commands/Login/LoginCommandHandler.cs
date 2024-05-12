@@ -1,6 +1,4 @@
-﻿using ActiveDiabetesAssistant.PL.API.Authentication;
-
-namespace ActiveDiabetesAssistant.PL.API.Models.User.Commands.Login;
+﻿namespace ActiveDiabetesAssistant.PL.API.Models.User.Commands.Login;
 
 public class LoginUserCommandHandler(IUserRepository service, IValidator<LoginUserCommand> validator) :
 	IRequestHandler<LoginUserCommand, LoginUserCommandResponce>
@@ -9,7 +7,7 @@ public class LoginUserCommandHandler(IUserRepository service, IValidator<LoginUs
 	{
 		await validator.ValidateAndThrowAsync(request, cancellationToken);
 
-		var user = await service.GetAsync(request.Login)
+		var user = await service.GetAsync(request.Email)
 			?? throw new ExpectedException("Wrong login", HttpStatusCode.Forbidden);
 
 		if (user.Password != Additional.GetPasswordHash(request.Password))
