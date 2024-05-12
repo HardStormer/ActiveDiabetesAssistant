@@ -1,0 +1,17 @@
+﻿global using ActiveDiabetesAssistant.Common.Exceptions;
+global using ActiveDiabetesAssistant.DAL.Entities;
+global using ActiveDiabetesAssistant.DAL.Interfaces;
+global using ActiveDiabetesAssistant.PL.API.Authentication;
+global using ActiveDiabetesAssistant.PL.API.Helpers;
+global using ActiveDiabetesAssistant.PL.API.Models.Base;
+global using AutoMapper;
+global using FluentValidation;
+global using MediatR;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Newtonsoft.Json;
+global using System.Linq.Expressions;
+global using System.Net;
+global using System.Text.Json.Serialization;
+global using System.Text.RegularExpressions;
+global using ValidationException = FluentValidation.ValidationException;

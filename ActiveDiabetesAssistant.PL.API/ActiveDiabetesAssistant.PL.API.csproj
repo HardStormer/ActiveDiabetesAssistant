@@ -4,17 +4,29 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4"/>
+        <PackageReference Include="AutoMapper" Version="13.0.1" />
+        <PackageReference Include="AutoMapper.Extensions.ExpressionMapping" Version="7.0.0" />
+        <PackageReference Include="FluentValidation" Version="11.9.1" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.1" />
+        <PackageReference Include="MediatR" Version="12.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Serilog" Version="3.1.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ActiveDiabetesAssistant.BLL.Entities\ActiveDiabetesAssistant.BLL.Entities.csproj" />
-      <ProjectReference Include="..\ActiveDiabetesAssistant.BLL.Interfaces\ActiveDiabetesAssistant.BLL.Interfaces.csproj" />
-      <ProjectReference Include="..\ActiveDiabetesAssistant.BLL.Standart\ActiveDiabetesAssistant.BLL.Standart.csproj" />
+      <ProjectReference Include="..\ActiveDiabetesAssistant.Common\ActiveDiabetesAssistant.Common.csproj" />
+      <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.Entities\ActiveDiabetesAssistant.DAL.Entities.csproj" />
+      <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.Interfaces\ActiveDiabetesAssistant.DAL.Interfaces.csproj" />
+      <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.SQL\ActiveDiabetesAssistant.DAL.SQL.csproj" />
     </ItemGroup>
 
 </Project>
