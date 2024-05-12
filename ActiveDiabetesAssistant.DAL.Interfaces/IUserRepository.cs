@@ -2,5 +2,5 @@
 
 public interface IUserRepository : IBaseRepository<UserDto>
 {
-	Task<UserDto?> GetAsync(string login);
+	Task<UserDto?> GetAsync(string email);
 }

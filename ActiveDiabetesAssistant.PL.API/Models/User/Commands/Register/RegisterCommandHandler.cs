@@ -1,6 +1,4 @@
-﻿using ActiveDiabetesAssistant.PL.API.Authentication;
-
-namespace ActiveDiabetesAssistant.PL.API.Models.User.Commands.Register;
+﻿namespace ActiveDiabetesAssistant.PL.API.Models.User.Commands.Register;
 
 public class RegisterUserCommandHandler(
 	IUserRepository service,
@@ -11,7 +9,7 @@ public class RegisterUserCommandHandler(
 	{
 		await validator.ValidateAndThrowAsync(request, cancellationToken);
 
-		var user = await service.GetAsync(request.Login);
+		var user = await service.GetAsync(request.Email);
 
 		if (user != null)
 			throw new ExpectedException("Login already exists", HttpStatusCode.Forbidden);
