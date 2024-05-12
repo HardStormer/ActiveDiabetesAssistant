@@ -100,7 +100,8 @@ app.UseRouter(endpoints =>
 {
 	endpoints.MapGet("/", async context =>
 	{
-		await Task.Run(() => context.Response.Redirect(@"/swagger/index.html"));
+		await context.Response.WriteAsync("Hello World!");
+		//await Task.Run(() => context.Response.Redirect(@"/swagger/index.html"));
 	});
 });
 
