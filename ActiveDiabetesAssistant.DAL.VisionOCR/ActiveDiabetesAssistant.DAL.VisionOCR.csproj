@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ActiveDiabetesAssistant.Common\ActiveDiabetesAssistant.Common.csproj" />
+    <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.Entities\ActiveDiabetesAssistant.DAL.Entities.csproj" />
+    <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.Interfaces\ActiveDiabetesAssistant.DAL.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
