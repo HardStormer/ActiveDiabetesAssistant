@@ -23,7 +23,8 @@ public class UpdateMessageCommandHandler(
 			Name = request.Name,
 			Age = request.Age,
 			Sex = request.Sex,
-			DiabetesType = request.DiabetesType
+			DiabetesType = request.DiabetesType,
+			UserId = user.Id,
 		};
 
 		await service.PatchAsync(dto);
