@@ -4,6 +4,7 @@ using ActiveDiabetesAssistant.PL.API.Models.GlucoseInfo.Commands.Update;
 using ActiveDiabetesAssistant.PL.API.Models.GlucoseInfo.Queries;
 using ActiveDiabetesAssistant.PL.API.Models.GlucoseInfo.Queries.Get;
 using ActiveDiabetesAssistant.PL.API.Models.GlucoseInfo.Queries.GetList;
+using ActiveDiabetesAssistant.PL.API.Models.VisionOcr.Queries.GetText;
 
 namespace ActiveDiabetesAssistant.PL.API.Controllers;
 
