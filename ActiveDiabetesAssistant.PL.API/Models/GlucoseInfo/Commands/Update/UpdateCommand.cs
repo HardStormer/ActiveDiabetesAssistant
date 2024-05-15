@@ -3,7 +3,7 @@
 public class UpdateGlucoseInfoCommand : BaseUpdateCommand
 {
 	public Guid GlucoseInfoId { get; set; }
-	public int GlucoseData { get; set; }
+	public float GlucoseData { get; set; }
 	public int? StepsCount { get; set; }
 }
 

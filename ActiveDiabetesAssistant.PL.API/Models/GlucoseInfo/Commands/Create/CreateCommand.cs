@@ -4,7 +4,7 @@ namespace ActiveDiabetesAssistant.PL.API.Models.GlucoseInfo.Commands.Create;
 
 public class CreateGlucoseInfoCommand : BaseCreateCommand<GlucoseInfoViewModel>
 {
-	public int GlucoseData { get; set; }
+	public float GlucoseData { get; set; }
 	public int? StepsCount { get; set; }
 }
 

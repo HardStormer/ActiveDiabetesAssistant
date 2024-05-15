@@ -2,7 +2,7 @@
 
 public class GlucoseInfoDto : BaseDto
 {
-	public int GlucoseData { get; set; }
+	public float GlucoseData { get; set; }
 	public int? StepsCount { get; set; }
 	public Guid PersonInfoId { get; set; }
 	public PersonInfoDto PersonInfo { get; set; } = null!;
