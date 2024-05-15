@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ActiveDiabetesAssistant.Common\ActiveDiabetesAssistant.Common.csproj" />
     <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.Entities\ActiveDiabetesAssistant.DAL.Entities.csproj" />
     <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.Interfaces\ActiveDiabetesAssistant.DAL.Interfaces.csproj" />
