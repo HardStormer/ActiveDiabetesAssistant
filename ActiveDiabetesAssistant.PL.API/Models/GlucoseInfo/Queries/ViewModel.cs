@@ -2,6 +2,6 @@
 
 public class GlucoseInfoViewModel : BaseViewModel
 {
-	public int GlucoseData { get; set; }
+	public float GlucoseData { get; set; }
 	public int? StepsCount { get; set; }
 }
