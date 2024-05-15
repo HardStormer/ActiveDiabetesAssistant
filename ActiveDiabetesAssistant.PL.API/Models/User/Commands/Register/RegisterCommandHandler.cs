@@ -2,6 +2,7 @@
 
 public class RegisterUserCommandHandler(
 	IUserRepository service,
+	IPersonInfoRepository personService,
 	IMapper mapper,
 	IValidator<RegisterUserCommand> validator) : IRequestHandler<RegisterUserCommand, RegisterUserCommandResponce>
 {
@@ -28,6 +29,15 @@ public class RegisterUserCommandHandler(
 		{
 			Token = token
 		};
+
+		var newUser = await service.GetAsync(request.Email);
+		var newPerson = new PersonInfoDto
+		{
+			Name = string.Empty,
+			UserId = newUser!.Id
+		};
+
+		await personService.AddAsync(newPerson);
 
 		return responce;
 	}
