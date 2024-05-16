@@ -31,6 +31,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ActiveDiabetesAssistant.Common\ActiveDiabetesAssistant.Common.csproj" />
+      <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.ChatGPT\ActiveDiabetesAssistant.DAL.ChatGPT.csproj" />
       <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.Entities\ActiveDiabetesAssistant.DAL.Entities.csproj" />
       <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.Interfaces\ActiveDiabetesAssistant.DAL.Interfaces.csproj" />
       <ProjectReference Include="..\ActiveDiabetesAssistant.DAL.SQL\ActiveDiabetesAssistant.DAL.SQL.csproj" />

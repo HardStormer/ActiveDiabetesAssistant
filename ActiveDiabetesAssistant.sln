@@ -17,9 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PL", "PL", "{7F518ACD-551D-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{74478119-3844-4E95-8183-AE029C172C12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveDiabetesAssistant.Common", "ActiveDiabetesAssistant.Common\ActiveDiabetesAssistant.Common.csproj", "{F526ED4E-C5F5-4018-9FBD-C6AF63DCC6F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveDiabetesAssistant.Common", "ActiveDiabetesAssistant.Common\ActiveDiabetesAssistant.Common.csproj", "{F526ED4E-C5F5-4018-9FBD-C6AF63DCC6F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveDiabetesAssistant.DAL.VisionOCR", "ActiveDiabetesAssistant.DAL.VisionOCR\ActiveDiabetesAssistant.DAL.VisionOCR.csproj", "{D2C4EDD1-FDF7-4558-AA50-844E52FF6606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActiveDiabetesAssistant.DAL.VisionOCR", "ActiveDiabetesAssistant.DAL.VisionOCR\ActiveDiabetesAssistant.DAL.VisionOCR.csproj", "{D2C4EDD1-FDF7-4558-AA50-844E52FF6606}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveDiabetesAssistant.DAL.ChatGPT", "ActiveDiabetesAssistant.DAL.ChatGPT\ActiveDiabetesAssistant.DAL.ChatGPT.csproj", "{16F0EF8E-5E30-4BEB-B774-4A4E30A0291A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D2C4EDD1-FDF7-4558-AA50-844E52FF6606}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2C4EDD1-FDF7-4558-AA50-844E52FF6606}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2C4EDD1-FDF7-4558-AA50-844E52FF6606}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F0EF8E-5E30-4BEB-B774-4A4E30A0291A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F0EF8E-5E30-4BEB-B774-4A4E30A0291A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F0EF8E-5E30-4BEB-B774-4A4E30A0291A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F0EF8E-5E30-4BEB-B774-4A4E30A0291A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{4FAF1371-410B-4135-ABD9-DB5BBBF0D9FC} = {FF2B63EC-417F-4BBE-A0E6-C25C68E337C4}
 		{F526ED4E-C5F5-4018-9FBD-C6AF63DCC6F4} = {74478119-3844-4E95-8183-AE029C172C12}
 		{D2C4EDD1-FDF7-4558-AA50-844E52FF6606} = {FF2B63EC-417F-4BBE-A0E6-C25C68E337C4}
+		{16F0EF8E-5E30-4BEB-B774-4A4E30A0291A} = {FF2B63EC-417F-4BBE-A0E6-C25C68E337C4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F9DDF25-404B-4730-A295-13CA7B7D7690}
