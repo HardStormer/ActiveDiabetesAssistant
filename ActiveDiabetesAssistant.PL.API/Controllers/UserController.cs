@@ -4,6 +4,7 @@ using ActiveDiabetesAssistant.PL.API.Models.User.Commands.Logout;
 using ActiveDiabetesAssistant.PL.API.Models.User.Commands.Register;
 using ActiveDiabetesAssistant.PL.API.Models.User.Commands.Update;
 using ActiveDiabetesAssistant.PL.API.Models.User.Queries;
+using ActiveDiabetesAssistant.PL.API.Models.User.Queries.CheckToken;
 using ActiveDiabetesAssistant.PL.API.Models.User.Queries.Get;
 using ActiveDiabetesAssistant.PL.API.Models.User.Queries.GetMyProfile;
 
@@ -13,6 +14,14 @@ public class UserController : BaseController
 {
 	public UserController()
 	{
+	}
+
+	[AllowAnonymous]
+	[HttpGet]
+	public virtual async Task<ActionResult<UserViewModel>> CheckToken([FromQuery] CheckTokenQuery query)
+	{
+		var result = await Mediator.Send(query);
+		return Ok(result);
 	}
 
 	/// <summary>
