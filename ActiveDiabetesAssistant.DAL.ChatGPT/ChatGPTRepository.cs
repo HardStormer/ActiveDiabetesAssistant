@@ -31,12 +31,10 @@ public class ChatGPTRepository : IChatGPTRepository
 		client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
 
 		var response = await client.PostAsync("https://api.openai.com/v1/completions", httpContent);
-		response.EnsureSuccessStatusCode();
 
 		var jsonResponse = await response.Content.ReadAsStringAsync();
 		var responseObject = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
 
 		return jsonResponse;
-		//return responseObject.choices[0].text.ToString();
 	}
 }
