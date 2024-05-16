@@ -16,7 +16,12 @@ public class AskAiQueryHandler(
 				{
 					Role = "user",
 					Content = request.Prompt
-				}
+				},
+				new()
+				{
+					Role = "system",
+					Content = request.Prompt
+				},
 			]
 		};
 		var result = await service.GetResponseAsync(aiRequest);
