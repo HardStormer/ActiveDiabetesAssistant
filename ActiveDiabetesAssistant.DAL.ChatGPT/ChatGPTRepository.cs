@@ -36,6 +36,7 @@ public class ChatGPTRepository : IChatGPTRepository
 		var jsonResponse = await response.Content.ReadAsStringAsync();
 		var responseObject = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
 
-		return responseObject.choices[0].text.ToString();
+		return jsonResponse;
+		//return responseObject.choices[0].text.ToString();
 	}
 }
