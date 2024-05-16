@@ -3,4 +3,5 @@
 public class AskAiQuery : IRequest<string>
 {
 	public string Prompt { get; set; }
+	public string SystemPrompt { get; set; }
 }
