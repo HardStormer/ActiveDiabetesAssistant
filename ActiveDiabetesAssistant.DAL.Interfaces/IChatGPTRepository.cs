@@ -1,6 +1,8 @@
-﻿namespace ActiveDiabetesAssistant.DAL.Interfaces;
+﻿using ActiveDiabetesAssistant.DAL.Entities.AI;
+
+namespace ActiveDiabetesAssistant.DAL.Interfaces;
 
 public interface IChatGPTRepository
 {
-	public Task<string> GetResponseAsync(string prompt);
+	public Task<ChatGptResponse> GetResponseAsync(ChatGptRequest prompt);
 }

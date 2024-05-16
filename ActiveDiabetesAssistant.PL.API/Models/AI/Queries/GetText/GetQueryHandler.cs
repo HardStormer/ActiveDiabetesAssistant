@@ -1,4 +1,6 @@
-﻿namespace ActiveDiabetesAssistant.PL.API.Models.VisionOcr.Queries.GetText;
+﻿using ActiveDiabetesAssistant.DAL.Entities.AI;
+
+namespace ActiveDiabetesAssistant.PL.API.Models.VisionOcr.Queries.GetText;
 
 public class AskAiQueryHandler(
 	IChatGPTRepository service) :
@@ -6,7 +8,18 @@ public class AskAiQueryHandler(
 {
 	public async Task<string> Handle(AskAiQuery request, CancellationToken cancellationToken)
 	{
-		var result = await service.GetResponseAsync(request.Prompt);
-		return result;
+		var aiRequest = new ChatGptRequest
+		{
+			Messages =
+			[
+				new()
+				{
+					Role = "user",
+					Content = request.Prompt
+				}
+			]
+		};
+		var result = await service.GetResponseAsync(aiRequest);
+		return result.Choices[0].Message.Content;
 	}
 }

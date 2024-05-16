@@ -1,4 +1,5 @@
-﻿using ActiveDiabetesAssistant.DAL.Interfaces;
+﻿using ActiveDiabetesAssistant.DAL.Entities.AI;
+using ActiveDiabetesAssistant.DAL.Interfaces;
 using Newtonsoft.Json;
 using System.Text;
 
@@ -6,35 +7,29 @@ namespace ActiveDiabetesAssistant.DAL.ChatGPT;
 
 public class ChatGPTRepository : IChatGPTRepository
 {
-	public async Task<string> GetResponseAsync(string prompt)
+	public async Task<ChatGptResponse> GetResponseAsync(ChatGptRequest request)
 	{
 		using var client = new HttpClient();
 
 		var token = Environment.GetEnvironmentVariable("AI_API_TOKEN");
-		var model = Environment.GetEnvironmentVariable("AI_API_MODEL");
 		var maxTokens = Environment.GetEnvironmentVariable("AI_API_MAX_TOKENS");
-		if (token == null || model == null || maxTokens == null)
+		if (token == null || maxTokens == null)
 		{
-			return "AI not configured";
+			throw new ArgumentNullException(nameof(token));
 		}
-		var requestBody = new
-		{
-			model = model,
-			prompt = prompt,
-			max_tokens = int.Parse(maxTokens)
-		};
-
-		var jsonRequestBody = JsonConvert.SerializeObject(requestBody);
+		var jsonRequestBody = JsonConvert.SerializeObject(request);
 		var httpContent = new StringContent(jsonRequestBody, Encoding.UTF8, "application/json");
 
 		client.DefaultRequestHeaders.Clear();
 		client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
 
 		var response = await client.PostAsync("https://api.openai.com/v1/chat/completions", httpContent);
+		response.EnsureSuccessStatusCode();
 
 		var jsonResponse = await response.Content.ReadAsStringAsync();
-		var responseObject = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
 
-		return jsonResponse;
+		var responce = JsonConvert.DeserializeObject<ChatGptResponse>(jsonResponse);
+
+		return responce ?? throw new Exception("No ai response");
 	}
 }
